@@ -1,6 +1,6 @@
 <div align="center">
 
-# Visa Auto
+# VisaPilot
 
 **Your configuration. One browser session. You take it from there.**
 
@@ -8,9 +8,9 @@ A configurable Playwright starter for a user-assisted visa scheduling workflow.
 
 **English · [简体中文](README.zh-CN.md)**
 
-[![Node.js](https://img.shields.io/badge/node-20%2B-339933)](https://nodejs.org/) [![Playwright](https://img.shields.io/badge/browser-Playwright-2EAD33)](package.json) [![Version](https://img.shields.io/badge/version-0.1.0-indigo)](package.json) [![Status](https://img.shields.io/badge/status-experimental-orange)](#limitations) [![Stars](https://img.shields.io/github/stars/Elyon0517/visa-auto?style=flat)](https://github.com/Elyon0517/visa-auto/stargazers)
+[![Node.js](https://img.shields.io/badge/node-20%2B-339933)](https://nodejs.org/) [![Playwright](https://img.shields.io/badge/browser-Playwright-2EAD33)](package.json) [![Version](https://img.shields.io/badge/version-0.1.0-indigo)](package.json) [![Status](https://img.shields.io/badge/status-experimental-orange)](#limitations) [![Stars](https://img.shields.io/github/stars/Elyon0517/VisaPilot?style=flat)](https://github.com/Elyon0517/VisaPilot/stargazers)
 
-**Find this useful? [Give it a star ⭐](https://github.com/Elyon0517/visa-auto/stargazers)**
+**Find this useful? [Give it a star ⭐](https://github.com/Elyon0517/VisaPilot/stargazers)**
 
 [Quick start](#quick-start) · [Configuration](#configuration) · [Usage](#usage) · [Scheduling](#optional-macos-scheduling) · [Privacy](#privacy) · [Contributing](#contributing)
 
@@ -41,8 +41,8 @@ This is an independent community project, unaffiliated with any government or ap
 Install Node.js 20+ and Google Chrome, then run:
 
 ```sh
-git clone https://github.com/Elyon0517/visa-auto.git
-cd visa-auto
+git clone https://github.com/Elyon0517/VisaPilot.git
+cd VisaPilot
 npm ci
 cp .env.example .env
 ```
@@ -125,6 +125,6 @@ Bug reports, documentation improvements, and small focused pull requests are wel
 
 <div align="center">
 
-If this project helps you, please consider [giving it a star ⭐](https://github.com/Elyon0517/visa-auto/stargazers).
+If this project helps you, please consider [giving it a star ⭐](https://github.com/Elyon0517/VisaPilot/stargazers).
 
 </div>

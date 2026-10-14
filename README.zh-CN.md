@@ -1,6 +1,6 @@
 <div align="center">
 
-# Visa Auto
+# VisaPilot
 
 **本地配置。独立会话。后续由你接手。**
 
@@ -8,9 +8,9 @@
 
 **[English](README.md) · 简体中文**
 
-[![Node.js](https://img.shields.io/badge/node-20%2B-339933)](https://nodejs.org/) [![Playwright](https://img.shields.io/badge/browser-Playwright-2EAD33)](package.json) [![Version](https://img.shields.io/badge/version-0.1.0-indigo)](package.json) [![Status](https://img.shields.io/badge/status-experimental-orange)](#当前限制) [![Stars](https://img.shields.io/github/stars/Elyon0517/visa-auto?style=flat)](https://github.com/Elyon0517/visa-auto/stargazers)
+[![Node.js](https://img.shields.io/badge/node-20%2B-339933)](https://nodejs.org/) [![Playwright](https://img.shields.io/badge/browser-Playwright-2EAD33)](package.json) [![Version](https://img.shields.io/badge/version-0.1.0-indigo)](package.json) [![Status](https://img.shields.io/badge/status-experimental-orange)](#当前限制) [![Stars](https://img.shields.io/github/stars/Elyon0517/VisaPilot?style=flat)](https://github.com/Elyon0517/VisaPilot/stargazers)
 
-**觉得有帮助？欢迎 [点个 Star ⭐](https://github.com/Elyon0517/visa-auto/stargazers)**
+**觉得有帮助？欢迎 [点个 Star ⭐](https://github.com/Elyon0517/VisaPilot/stargazers)**
 
 [快速开始](#快速开始) · [配置](#配置) · [使用](#使用) · [定时运行](#macos-定时运行) · [隐私](#隐私) · [参与贡献](#参与贡献)
 
@@ -41,8 +41,8 @@ flowchart LR
 安装 Node.js 20+ 和 Google Chrome，然后执行：
 
 ```sh
-git clone https://github.com/Elyon0517/visa-auto.git
-cd visa-auto
+git clone https://github.com/Elyon0517/VisaPilot.git
+cd VisaPilot
 npm ci
 cp .env.example .env
 ```
@@ -140,6 +140,6 @@ zsh -n run-once.sh
 
 <div align="center">
 
-如果这个项目对你有帮助，欢迎 [点个 Star ⭐](https://github.com/Elyon0517/visa-auto/stargazers)。
+如果这个项目对你有帮助，欢迎 [点个 Star ⭐](https://github.com/Elyon0517/VisaPilot/stargazers)。
 
 </div>
