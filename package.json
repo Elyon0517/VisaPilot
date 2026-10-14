@@ -1,0 +1,17 @@
+{
+  "name": "visa-auto",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Configurable Playwright starter for a user-assisted visa scheduling browser workflow.",
+  "scripts": {
+    "open": "node src/open.js",
+    "login": "node src/login.js",
+    "install-browser": "playwright install chromium",
+    "check": "node --check src/browser.js && node --check src/flow.js && node --check src/login.js && node --check src/open.js && node --check src/inspect.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "^1.49.0"
+  }
+}
