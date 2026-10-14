@@ -1,8 +1,29 @@
-# visa-auto
+<div align="center">
 
-A configurable Playwright starter for a user-assisted visa scheduling workflow. ⭐ If this project helps you, please give it a **Star**! Issues and pull requests are welcome.
+# Visa Auto
 
-基于 Node.js 和 Playwright 的签证预约页面自动化框架。欢迎 Star、提交 Issue 和 PR，一起完善这个项目！
+**Your configuration. One browser session. You take it from there.**
+
+A configurable Playwright starter for a user-assisted visa scheduling workflow.
+
+**English · [简体中文](README.zh-CN.md)**
+
+[![Node.js](https://img.shields.io/badge/node-20%2B-339933)](https://nodejs.org/) [![Playwright](https://img.shields.io/badge/browser-Playwright-2EAD33)](package.json) [![Version](https://img.shields.io/badge/version-0.1.0-indigo)](package.json) [![Status](https://img.shields.io/badge/status-experimental-orange)](#limitations) [![Stars](https://img.shields.io/github/stars/Elyon0517/visa-auto?style=flat)](https://github.com/Elyon0517/visa-auto/stargazers)
+
+**Find this useful? [Give it a star ⭐](https://github.com/Elyon0517/visa-auto/stargazers)**
+
+[Quick start](#quick-start) · [Configuration](#configuration) · [Usage](#usage) · [Scheduling](#optional-macos-scheduling) · [Privacy](#privacy) · [Contributing](#contributing)
+
+</div>
+
+```mermaid
+flowchart LR
+    A[Local configuration] --> B[Temporary Chrome profile]
+    B --> C[Login and security questions]
+    C --> D[Reschedule page]
+    D --> E[Configured consular post]
+    E --> F[Manual handoff]
+```
 
 ## What it does
 
@@ -20,9 +41,13 @@ This is an independent community project, unaffiliated with any government or ap
 Install Node.js 20+ and Google Chrome, then run:
 
 ```sh
+git clone https://github.com/Elyon0517/visa-auto.git
+cd visa-auto
 npm ci
 cp .env.example .env
 ```
+
+## Configuration
 
 Edit `.env` locally:
 
@@ -38,6 +63,8 @@ Edit `.env` locally:
 | `SAVE_SCREENSHOTS` | Save local diagnostic screenshots | `false` |
 
 Security field IDs depend on your account. Inspect them locally; no personal questions or answers are included. For example, the JSON format is `VISA_SECURITY_ANSWERS='{"your_field_id":"your_local_answer"}'`. Configure every answer field your account may display. Unknown or unconfigured fields stop the flow before submission.
+
+## Usage
 
 ```sh
 npm run open       # Open the homepage for manual exploration
@@ -86,8 +113,18 @@ examples/         Generic launchd template
 .env.example      Empty local configuration template
 ```
 
+## Limitations
+
+Experimental software: selectors and account-specific security fields may change. Browser behavior has to be verified with your own authorized account. There is no availability monitoring, notification service, or automatic booking. Human verification requires manual interaction. The optional scheduling wrapper targets macOS.
+
 ## Contributing
 
 Bug reports, documentation improvements, and small focused pull requests are welcome. Describe expected and actual behavior, include your Node.js/macOS versions where relevant, and remove all personal data from examples. Run `npm run check` and `zsh -n run-once.sh` before submitting. Test browser behavior with your own authorized account; never add credentials or recorded sessions to tests.
 
-欢迎大家 Star ⭐！也欢迎用中文或英文反馈问题、改进文档和贡献代码。
+---
+
+<div align="center">
+
+If this project helps you, please consider [giving it a star ⭐](https://github.com/Elyon0517/visa-auto/stargazers).
+
+</div>
