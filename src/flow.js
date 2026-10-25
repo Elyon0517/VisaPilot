@@ -1,10 +1,4 @@
-/**
- * 登录流程的共用实现。login.js 都走这里。
- *
- * 硬规则：
- *   - 只访问 HOME_URL，深层页面一律靠点击进入，绝不直接拼 URL
- *   - 只登录、只读页面，不点任何预约/确认/提交
- */
+/** 共享登录流程：只从 HOME_URL 点击进入深层页面，不提交预约或确认。 */
 import { shot, waitThroughQueue, HOME_URL } from './browser.js';
 
 const EMAIL = process.env.VISA_EMAIL;
@@ -203,15 +197,7 @@ export function nextHalfHour(now = new Date()) {
   return t;
 }
 
-/**
- * 在改期页上待命，直到 target 时刻。
- *
- * 站点会因长时间无操作自动登出，所以中途用面包屑来回跳一下：
- * Reschedule → Visa Application Home → Reschedule。
- * 这是纯导航，没有任何提交动作。
- *
- * 收尾前 2 分钟停止跳转，确保到点时已经稳稳停在改期页上。
- */
+/** 等待 target 时刻，期间仅用面包屑导航保活；最后两分钟不再发起保活跳转。 */
 export async function keepAliveUntil(
   page,
   target,
@@ -262,13 +248,7 @@ export async function keepAliveUntil(
   return settledValue;
 }
 
-/**
- * 面包屑来回跳一次，回到改期页。纯导航。
- *
- * **整个函数不许抛异常** —— 保活跳转只是锦上添花，失败了应该让调用方留在原地继续等，
- * 而不是把整轮拖垮。实际踩过：`home.click()` 在「点了但站点不跳转」时抛
- * TimeoutError，未捕获直接崩掉 node，一轮已经登录成功、已站上改期页的运行就此报废。
- */
+/** 仅用面包屑导航保活。失败时返回 false，避免终止已登录的会话。 */
 async function bounce(page) {
   try {
     const home = page.getByRole('link', { name: /Visa Application Home/i }).first();

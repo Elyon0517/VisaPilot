@@ -1,8 +1,4 @@
-/**
- * 调试工具：dump 当前页面所有输入框 / 按钮的选择器信息。
- * 用来确认 login.js 该用哪些 selector。
- * 运行: node src/inspect.js
- */
+/** 输出当前页面输入框和按钮的选择器。运行：node src/inspect.js。 */
 import { launch, shot, HOME_URL } from './browser.js';
 
 const URL = HOME_URL;

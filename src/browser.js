@@ -11,13 +11,7 @@ export const SHOTS_DIR = path.join(ROOT, 'screenshots');
 /** 唯一允许的入口。任何脚本都不许直接拼深层 URL —— 只能从这里点进去。 */
 export const HOME_URL = 'https://www.usvisascheduling.com/en-us/';
 
-/**
- * 启动一个**一次性**的 Chrome 实例。
- *
- * profile 建在系统临时目录里，退出时整个删掉：
- * 不留 cookie、不留登录态、不留历史，每次运行都是干净的。
- * 代价是每次都得完整登录一遍 —— 这是有意的取舍。
- */
+/** 每次使用临时 Chrome profile，关闭时删除，不复用登录态。 */
 export async function launch() {
 
   const profileDir = fs.mkdtempSync(path.join(os.tmpdir(), 'visa-auto-'));
@@ -68,12 +62,7 @@ const QUEUE_MARKERS = [
   /Thank you for your patience/i,
 ];
 
-/**
- * 站点会在任意一步插入 Queue-it 虚拟排队页（"You are now in line."）。
- * 它自己会定时刷新并放行，所以这里什么都不做，只是等它过去。
- *
- * 每次 goto / 点击跳转之后都该调一次。
- */
+/** 页面跳转后等待虚拟排队页自动放行，不主动刷新。 */
 export async function waitThroughQueue(page, { maxMinutes = 45 } = {}) {
   const deadline = Date.now() + maxMinutes * 60_000;
   let announced = false;
