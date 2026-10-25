@@ -1,11 +1,4 @@
-/**
- * 跑一次完整登录：全新 profile → 首页 → 账号密码 → 安全问题 → 改期页。
- *
- * 不复用登录态，不留任何本地记录，只从首页进。
- * 登录后就停手，不做任何预约/确认动作。
- *
- * 运行: npm run login
- */
+/** 使用新 profile 从首页登录，停在改期页，不执行预约或确认操作。 */
 import { launch } from './browser.js';
 import {
   assertCredentials,
